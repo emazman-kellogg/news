@@ -10,7 +10,7 @@ get "/" do
   long = -87.6722787
 
   units = "imperial" # or metric, whatever you like
-  key = "YOUR-API-KEY-GOES-HERE" # replace this with your real OpenWeather API key
+  key = "3641e06cde19cf6994502ec0e2d500ab" # replace this with your real OpenWeather API key
 
   # construct the URL to get the API data (https://openweathermap.org/api/one-call-api)
   url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{lat}&lon=#{long}&units=#{units}&appid=#{key}"
