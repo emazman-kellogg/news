@@ -19,4 +19,8 @@ get "/" do
   @forecast = HTTParty.get(url).parsed_response.to_hash
 
   ### Get the news
+  url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=8aa0283a2c4b465493b55d5b8ba516d1"
+  news = HTTParty.get(url).parsed_response.to_hash
+  # news is now a Hash you can pretty print (pp) and parse for your output
+  view 'weather'
 end
