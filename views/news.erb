@@ -23,7 +23,40 @@
   <body>
 
     <div class="container mt-5">
-      <h1>News</h1>
+      <h1>Swampscott Local Weather & News</h1>
+    </div>
+
+    <div class="row">
+    <h2> Swampscott Current Weather</h2>
+    <% It is currently @current_temp degrees.%>
+    <p1>
+    <% for day in @current_desc %>
+        <div class="col-sm-3"><img class="img-fluid" src="/images/<%= day %>.jpg"></div>
+        <% end%>
+        </p1>
+    </div>
+
+
+    <div class="row">
+    <h3> Swampscott Local Weather - 7 Day Forecast</h3>
+    <p1>
+    <% for day in @future_desc %>
+        <div class="col-sm-3"><img class="img-fluid" src="/images/<%= day %>.jpg"></div>
+        <% end%>
+        <% It is currently @future_temp degrees.%>
+        </p1>
+    </div>
+
+    <div class="row">
+    <h4> National News Highlight </h4>
+    <% @title%>
+    <div class="col-sm-3"><img class="img-fluid" src=@url_to_image></div>
+        <% end%>
+    <p2>
+    <% @description%>
+    <% @content%>
+    <% href=@url %>
+        </p2>
     </div>
 
     <!-- Optional JavaScript -->
