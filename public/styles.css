@@ -1,3 +1,11 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+.media img {
+  width: 64px;
+  height: 64px;
+}
+
+ div { text-align: center; }
+ ul { display: inline-block; text-align: left; }

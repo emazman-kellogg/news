@@ -18,31 +18,70 @@
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
-    <title>News</title>
+    <title>The Swampscott Reporter</title>
   </head>
   <body>
 
     <div class="container mt-5">
-      <h1>Swampscott Local Weather & News</h1>
+    <div class="col text-center">
+      <h1>The Swampscott Correspondent</h1>
+      <p>Big Blue or Go Home!</p>
+    </div>
     </div>
 
-    <div class="row">
-    <h2> Swampscott Current Weather</h2>
-    It is currently <%= @current_temp %> degrees.
-    <p1>
-    <% for day in @current_desc %>
-        <div class="col-sm-3"><img class="img-fluid" src="/images/<%= day %>.jpg"></div>
-        <% end%>
-        </p1>
-    </div>
+    <hr class="my-4">
 
-    <div class="row">
-    <h3> Swampscott Local Weather - 7 Day Forecast</h3>
-    <% for day in @forecast["daily"] %>
-        <div class="col-sm-3"><img class="img-fluid" src="/images/<%= day["weather"][0]["main"]%>.jpg"></div>
-        It will be <%= day["temp"]["max"]%> degrees and <%= day["weather"][0]["description"]%>.
-        <% end%>
-    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h3>Swampscott Current Weather</h3>
+          It is currently <%= @forecast["current"]["temp"] %> degrees and feels like <%= @forecast["current"]["feels_like"] %> degrees.
+        </div>
+      </div>
+
+      <div class="row mt-4">
+      <div class="row align-items-center">
+        <div class="col text-center">
+          <h4>Things to Do</h4>
+          <p>Swampscott is a super fun place, rain or shine! Come check out this 2 square mile beach town north of Boston!</p>
+        </div>        
+        <div class="picture col">
+          <img src="/images/<%= @forecast["current"]["weather"][0]["main"] %>.jpg" class="img-fluid rounded-circle" alt="picture">
+          </div>
+        <div class="col text-center">
+          <h4>The Best of Swampscott</h4>
+          <p>
+            <ul>
+              <li>Sunny Day Activity: Relax at Phillips Beach</li>
+              <li>Rainy Day Activity: Shop at TJ Maxx</li>
+              <li>Any Day Activity: Eat Calzone from Captains Pizza</li>
+              <li>Any Day Activity: Sip a Cocktail at Mission on the Bay</li>
+              <li>Any Day Activity: Head to Bagel World</li>
+            </ul>
+          </p>
+        </div>  
+        </div>
+      </div>
+
+
+    <hr class="my-4">
+
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h3> Swampscott 8 Day Forecast</h3>
+          <p>Today's Weather and the next 7 day forecast. Plan appropriately!</p>
+          <div class="row mt-4">
+          <div class="picture col-md-12">
+            <% for day in @forecast["daily"] %>
+            <div class="col-sm-3"><img class="img-fluid" src="/images/<%= day["weather"][0]["main"]%>.jpg"></div>
+            <div class="media-body">
+            <h5>It will be <%= day["temp"]["max"]%> degrees and <%= day["weather"][0]["description"]%>.</h5>
+            <% end%>
+            </div>
+        </div>
+      </div>
+
 
     <div class="row">
     <h4> National News Highlight </h4>

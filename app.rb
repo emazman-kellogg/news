@@ -31,13 +31,13 @@ get "/" do
     end        
 
     @future_temp = []
-    no_of_future_temp = 8
+    no_of_future_temp = 6
     no_of_future_temp.times do
         @future_temp << @forecast["daily"][0]["temp"]["max"]
     end
 
     @future_desc = []
-    no_of_future_desc = 8
+    no_of_future_desc = 6
     no_of_future_desc.times do
         @future_desc << @forecast["daily"][0]["weather"][0]["main"]
     end
