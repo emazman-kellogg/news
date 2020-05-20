@@ -18,6 +18,8 @@ get "/" do
   # make the call
   @forecast = HTTParty.get(url).parsed_response.to_hash
 
+ # NOT IN USE
+
    @current_temp = []
     no_of_current_temp = 1
     no_of_current_temp.times do
@@ -42,6 +44,10 @@ get "/" do
         @future_desc << @forecast["daily"][0]["weather"][0]["main"]
     end
     
+    day_number = 1
+    day_number = day_number+1
+    puts day_number
+
     # puts @future_desc.inspect
 
   ## Get the news

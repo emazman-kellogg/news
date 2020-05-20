@@ -82,17 +82,38 @@
         </div>
       </div>
 
-
+    <hr class="my-4">
+        
+    <div class="container">
     <div class="row">
-    <h4> National News Highlight </h4>
-    <%= @news%>
-    <div class="col-sm-3"><img class="img-fluid" src= <%=@url_to_image %>></div>
-    <p2>
-    <% @description%>
-    <% @content%>
-    <% href=@url %>
-        </p2>
+    <div class="col text-center">
+    <h3> National News Highlight </h3>
+    <p>The world is crazy. This could be anything. Brace yourself!</p>
     </div>
+    </div>
+    </div>
+
+    <div class="row mt-4">
+    <% for article in @news["articles"] %>
+    <h5>Headline: <%= article["title"]%> <a href="<%= article["url"]%>" class="btn btn-info">Full Article</a></h5>
+    <% end%>
+    </div>
+
+    <hr class="my-4">
+    <div class="footerdesign">
+    <div class="container footer">
+      <div class="row my-0">
+        <div class="col-sm-3">
+          <img src="K_RGB.png">
+        </div>
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-6">
+          <p class="mt-3"><em>This is for my software development class, pretty neat, right? For educational purposes only.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
