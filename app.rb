@@ -33,30 +33,32 @@ get "/" do
     @future_temp = []
     no_of_future_temp = 8
     no_of_future_temp.times do
-        @future_temp << @forecast["daily"]["temp"]["max"]
+        @future_temp << @forecast["daily"][0]["temp"]["max"]
     end
 
     @future_desc = []
     no_of_future_desc = 8
     no_of_future_desc.times do
-        @future_desc << @forecast["daily"]["weather"][0]["main"]
-    end           
+        @future_desc << @forecast["daily"][0]["weather"][0]["main"]
+    end
+    
+    # puts @future_desc.inspect
 
-  ### Get the news
+  ## Get the news
   url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=8aa0283a2c4b465493b55d5b8ba516d1"
   @news = HTTParty.get(url).parsed_response.to_hash
-  # news is now a Hash you can pretty print (pp) and parse for your output
+#   news is now a Hash you can pretty print (pp) and parse for your output
 
-   @source = @news["name"]
-   @author = @news["author"]
-   @title = @news["title"]
-   @description = @news["description"]
-   @url = @news["url"]
-   @url_to_image = @news["urlToImage"]
-   @published_at = @news["publishedAt"]
-   @content = @news["content"]
+#    @source = @news["name"]
+#    @author = @news["author"]
+#    @title = @news["title"]
+#    @description = @news["description"]
+#    @url = @news["url"]
+#    @url_to_image = @news["urlToImage"]
+#    @published_at = @news["publishedAt"]
+#    @content = @news["content"]
 
-
+puts @news
 
   view 'news'
 end

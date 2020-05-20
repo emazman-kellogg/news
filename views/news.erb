@@ -28,7 +28,7 @@
 
     <div class="row">
     <h2> Swampscott Current Weather</h2>
-    <% It is currently @current_temp degrees.%>
+    It is currently <%= @current_temp %> degrees.
     <p1>
     <% for day in @current_desc %>
         <div class="col-sm-3"><img class="img-fluid" src="/images/<%= day %>.jpg"></div>
@@ -36,22 +36,18 @@
         </p1>
     </div>
 
-
     <div class="row">
     <h3> Swampscott Local Weather - 7 Day Forecast</h3>
-    <p1>
-    <% for day in @future_desc %>
-        <div class="col-sm-3"><img class="img-fluid" src="/images/<%= day %>.jpg"></div>
+    <% for day in @forecast["daily"] %>
+        <div class="col-sm-3"><img class="img-fluid" src="/images/<%= day["weather"][0]["main"]%>.jpg"></div>
+        It will be <%= day["temp"]["max"]%> degrees and <%= day["weather"][0]["description"]%>.
         <% end%>
-        <% It is currently @future_temp degrees.%>
-        </p1>
     </div>
 
     <div class="row">
     <h4> National News Highlight </h4>
-    <% @title%>
-    <div class="col-sm-3"><img class="img-fluid" src=@url_to_image></div>
-        <% end%>
+    <%= @news%>
+    <div class="col-sm-3"><img class="img-fluid" src= <%=@url_to_image %>></div>
     <p2>
     <% @description%>
     <% @content%>
