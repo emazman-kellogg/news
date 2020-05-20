@@ -2,6 +2,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+    text-emphasis-color:lightblue
+}
+
 .media img {
   width: 64px;
   height: 64px;
@@ -10,7 +14,33 @@ body {
  div { text-align: center; }
  ul { display: inline-block; text-align: left; }
 
- h5 {
-     color:gray;
-     font-size: 8px
+ h1 {
+     color:cadetblue;
+     font-style:italic;
  }
+
+h4{
+    color:cadetblue;
+    font-syle:italic;
+
+}
+
+ h5 {
+     color:black;
+     font-size: 16px
+ }
+
+ h6 {
+     color:gray;
+     font-size: 12px
+ }
+
+ .footerdesign{
+  height: 5rem;
+}
+
+.footer img {
+  width: 50px;
+  align-content: center;
+  margin-top: 1rem;
+}
